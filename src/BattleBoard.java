@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class BattleBoard {
     private static int monsterCount;
@@ -37,9 +38,23 @@ public class BattleBoard {
         System.out.println();
     }
 
-    public int specifyMonsterAmount(){
+    public void askMonsterCount(){
         System.out.println("How many monsters would you like to have in your game?");
-        monsterCount = Integer.parseInt(scanner.nextLine());
+    }
+
+    public int specifyMonsterAmount(){
+        boolean correctAnswer = false;
+        while(!correctAnswer) {
+            try {
+                askMonsterCount();
+                monsterCount = scanner.nextInt();
+                if(monsterCount > 0)
+                    correctAnswer = true;
+            } catch (InputMismatchException e){
+                System.err.println(e.getMessage());
+            }
+            scanner.nextLine();
+        }
         return monsterCount;
     }
 

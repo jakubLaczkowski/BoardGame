@@ -8,6 +8,7 @@ public class Movement {
     public void rollTheDice(){
         dice = (int) Math.round(Math.random()*5 +1);
     }
+
     public void movePlayer(Player player){
         System.out.println("Which way do you wanna move? up/down/left/right/stay");
         switch(scanner.nextLine()){
@@ -41,6 +42,7 @@ public class Movement {
                 System.out.println("Incorrect command! You lose a round.");
         }
     }
+
     public void moveMonsters(Monster[] monsters){
         int moveY = 0;
         int moveX = 0;
@@ -76,6 +78,7 @@ public class Movement {
             }
         }
     }
+
     public int getDice() {
         return dice;
     }

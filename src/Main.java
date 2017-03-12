@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 public class Main {
     public static void main(String[] args){
         Monster[] monsters;
@@ -16,6 +18,8 @@ public class Main {
                 .append("6. You can choose the difficulty level by specifying the amount of monsters that will walk on the board.\n")
                 .append("LET'S BEGIN!\n");
         System.out.println(rules);
+
+
 
         battleBoard.specifyMonsterAmount();
         monsters = battleBoard.createMonsters();

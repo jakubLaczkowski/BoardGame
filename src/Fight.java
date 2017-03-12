@@ -1,5 +1,7 @@
 public class Fight {
-        private int monsterWereFightingId;
+
+    private int monsterWereFightingId;
+
     public void checkIfFight(Monster[] monsters, Player player){
         for(int i = 0; i < monsters.length; i++){
                 if(player.getPositionX() == monsters[i].getPositionX()){
@@ -38,6 +40,7 @@ public class Fight {
                 }
         }
     }
+
     public void startFight(Monster[] monsters, Player player){
         System.out.println("You meet a monster!");
         System.out.println("He attacks you for " + monsters[monsterWereFightingId].getAttack() + " dmg!");
